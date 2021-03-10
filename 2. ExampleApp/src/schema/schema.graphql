@@ -1,4 +1,4 @@
-type Query = {
+type Query {
     "Lista de los estudiantes"
     students: String
 }
