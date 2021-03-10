@@ -25,5 +25,5 @@ app.get('/', expressPlayground({
 }))
 
 httpServer.listen(PORT, () => {
-    console.log(`Academia está online en http://localhost:${PORT}/graphql`)
+    console.log(`Academia está online en http://localhost:${PORT}`)
 });

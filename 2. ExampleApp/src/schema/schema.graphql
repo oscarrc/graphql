@@ -1,6 +1,6 @@
 type Query {
     "Lista de los estudiantes"
-    students: String
+    students: [Student!]!
 }
 
 "Información de los estudiantes"
@@ -39,6 +39,6 @@ type Review {
 enum Level {
     ALL
     NOVICE
-    INTERMEDIATE
+    MEDIUM
     EXPERT
 }
