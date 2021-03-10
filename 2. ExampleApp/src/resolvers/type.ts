@@ -8,8 +8,7 @@ const type: IResolvers = {
             let coursesList : Array<any> = [];
             database.courses.forEach( c => {
                 if(parent.courses.includes(c.id)) coursesList.push(c)
-            })
-            
+            })            
             return coursesList;
         }
     },
@@ -21,6 +20,7 @@ const type: IResolvers = {
             })
             return studentsList;
         },
+        path: parent => `https://udemy.com${parent.path}`
     }
 };
 
