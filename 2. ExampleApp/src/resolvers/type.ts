@@ -2,7 +2,7 @@ import { IResolvers } from 'graphql-tools';
 import { database } from '../data/data.store';
 import _ from 'lodash';
 
-//Resolver subtipos
+//Resolver tipos incrustados
 const type: IResolvers = {
     Student: {
         courses: parent => {
@@ -12,6 +12,15 @@ const type: IResolvers = {
             })
             return coursesList;
         }
+    },
+    Course: {
+        students: parent => {
+            let studentsList : Array<any> = [];
+            database.students.forEach( s => {
+                if( s.courses.includes(parent.id) ) studentsList.push(s);
+            })
+            return studentsList;
+        },
     }
 };
 

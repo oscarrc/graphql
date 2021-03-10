@@ -2,7 +2,11 @@ type Query {
     "Lista de los estudiantes"
     students: [Student!]!,
     "Información de un estudiante"
-    student(id: ID!): Student
+    student(id: ID!): Student,
+    "Lista de los cursos"
+    courses: [Course!]!,
+    "Información de un curso"
+    course(id: ID!): Course
 }
 
 "Información de los estudiantes"
@@ -33,7 +37,7 @@ type Course {
 type Review {
     id: ID!,
     name: String!,
-    points: Int!,
+    points: Float!,
     comment: String
 }
 
