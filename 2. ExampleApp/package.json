@@ -4,7 +4,11 @@
   "description": "",
   "main": "build/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node build/server.js",
+    "build": "tsc -p . && ncp src/schema build/schema",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "npm run build:dev",
+    "build:dev": "nodemon 'src/server.ts' --exec 'ts-node' src/server.ts -e ts,json,graphql"
   },
   "author": "Oscar R.C. <oscarrc.web@gmail.com>",
   "license": "MIT",
