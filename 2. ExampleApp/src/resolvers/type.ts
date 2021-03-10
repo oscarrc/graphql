@@ -1,15 +1,15 @@
 import { IResolvers } from 'graphql-tools';
 import { database } from '../data/data.store';
-import _ from 'lodash';
 
 //Resolver tipos incrustados
 const type: IResolvers = {
     Student: {
         courses: parent => {
             let coursesList : Array<any> = [];
-            parent.courses.map( (c: String) => {
-                coursesList.push(_.filter(database.courses, ['id', c])[0])
+            database.courses.forEach( c => {
+                if(parent.courses.includes(c.id)) coursesList.push(c)
             })
+            
             return coursesList;
         }
     },
