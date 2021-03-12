@@ -2,13 +2,13 @@ import { IResolvers } from 'graphql-tools';
 
 const query: IResolvers = {
     Query: {
-        hola(): String {
+        hola(): string {
             return 'Hola Mundo';
         },
-        holaConNombre(__: void, { nombre }):String {
+        holaConNombre(__: void, { nombre }):string {
             return `Hola ${nombre}`;
         },
-        holaAlCursoGraphQL(): String {
+        holaAlCursoGraphQL(): string {
             return 'Hola desde el curso GraphQL';
         }
     }

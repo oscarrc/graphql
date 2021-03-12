@@ -6,7 +6,7 @@ export class RacesData extends F1 {
         super();
     }
 
-    async getYear(year:String){
+    async getYear(year:string){
         year = checkYear(year);
 
         return await this.get(`${year}.json`, {
@@ -16,7 +16,7 @@ export class RacesData extends F1 {
         })
     }
 
-    async getYearRound(year:String, round:Number){
+    async getYearRound(year:string, round:number){
         year = checkYear(year);
         round = checkRound(round);
 
