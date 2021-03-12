@@ -5,6 +5,7 @@ type Query {
     driversList(limit: Int, page: Int): [Driver!]!
     driversSeasonList(year: String!): [Driver!]!
     driversRaceList(year: String!, round: Int!): [Driver!]!
+    driverSelect(id: ID!): Driver
 }
 
 type Season {
