@@ -1,5 +1,7 @@
+import { RacesData } from './data-races';
 import { SeasonsData } from './data-seasons'
 
-export const dataSoruces = {
+export const dataSources = {
     SeasonsData,
+    RacesData
 }
