@@ -19,6 +19,11 @@ const type: IResolvers = {
     },
     Location: {
         lon: parent => parent.long
+    },
+    Driver: {
+        id: parent => parent.driverId,
+        name: parent => `${parent.givenName} ${parent.familyName}`,
+        urlMobile: parent => getWikipediaMobileUrl(parent.url)
     }
 };
 

@@ -35,3 +35,14 @@ type Location {
   locality: String!
   country: String!
 }
+
+type Driver {
+  id: String!
+  url: String!
+  urlMobile: String!
+  name: String!
+  dateOfBirth: String!
+  nationality: String!
+  permanentNumber: String
+  code: String
+}
