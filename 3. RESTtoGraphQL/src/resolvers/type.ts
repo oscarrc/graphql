@@ -27,7 +27,7 @@ const type: IResolvers = {
     },
     Standing: {
         driver: parent => parent.Driver,
-        carConstructor:  parent => parent.Constructor[0]
+        carConstructor:  parent => parent.Constructors[0]
     },
     Constructor: {
         id: parent => parent.constructorId,
