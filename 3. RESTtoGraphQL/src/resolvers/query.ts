@@ -11,8 +11,8 @@ const query: IResolvers = {
         async raceSelect(_: void, { year, round }, { dataSources }){
             return await dataSources.races.getYearRound( year, round ).then( (data:any) => data.MRData.RaceTable.Races[0]);
         },
-        async driversList(_: void, __: void, { dataSources }){
-            return await dataSources.drivers.getDrivers().then( (data:any) =>  data.MRData.DriverTable.Drivers );
+        async driversList(_: void, { limit, page }, { dataSources }){
+            return await dataSources.drivers.getDrivers( limit, page ).then( (data:any) =>  data.MRData.DriverTable.Drivers );
         },
     }
 };

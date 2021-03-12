@@ -6,8 +6,10 @@ export class DriversData extends F1 {
         super();
     }
 
-    async getDrivers(){
-        return await this.get("drivers.json?limit=853", {
+    async getDrivers(limit: number = -1, page: number = 1){
+        limit = limit < 0 ? 853 : limit;
+
+        return await this.get(`drivers.json?limit=${limit}&offset=${(page - 1 )* limit}`, {
             cacheOptions: {
                 ttl: 60
             }
