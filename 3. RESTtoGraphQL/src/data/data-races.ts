@@ -1,3 +1,4 @@
+import { checkYear } from "../lib/utils";
 import { F1 } from "./data-source"
 
 export class RacesData extends F1 {
@@ -6,11 +7,7 @@ export class RacesData extends F1 {
     }
 
     async getYear(year:String){
-        const currentYear = new Date().getFullYear();
-
-        if(isNaN(+year) || +year < 1950 || +year > currentYear){
-            year = String(currentYear);
-        }
+        year = checkYear(year);
 
         return await this.get(`${year}.json`, {
             cacheOptions: {
