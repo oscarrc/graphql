@@ -23,7 +23,7 @@ export class DriversData extends F1 {
         })
     }
 
-    async getRoundDrivers(year: string, round: number){
+    async getRaceDrivers(year: string, round: number){
         year = checkYear(year);
         round = checkRound(round);
 
