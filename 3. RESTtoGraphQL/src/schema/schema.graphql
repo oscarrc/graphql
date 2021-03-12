@@ -3,6 +3,7 @@ type Query {
     racesByYear(year: String!): [Race!]!
     raceSelect(year: String!, round: Int!): Race    
     driversList(limit: Int, page: Int): [Driver!]!
+    driversSeasonList(year: String!): [Driver!]!
 }
 
 type Season {
