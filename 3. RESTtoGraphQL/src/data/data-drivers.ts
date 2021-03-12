@@ -1,4 +1,4 @@
-import { checkYear } from "../lib/utils";
+import { checkRound, checkYear } from "../lib/utils";
 import { F1 } from "./data-source"
 
 // Fuente de datos REST
@@ -11,9 +11,7 @@ export class DriversData extends F1 {
         limit = limit < 0 ? 853 : limit;
 
         return await this.get(`drivers.json?limit=${limit}&offset=${(page - 1 )* limit}`, {
-            cacheOptions: {
-                ttl: 60
-            }
+            cacheOptions: { ttl: 60 }
         })
     }
 
@@ -21,9 +19,16 @@ export class DriversData extends F1 {
         year = checkYear(year);
         
         return await this.get(`${year}/drivers.json`, {
-            cacheOptions: {
-                ttl: 60
-            }
+            cacheOptions: { ttl: 60 }
+        })
+    }
+
+    async getRoundDrivers(year: string, round: number){
+        year = checkYear(year);
+        round = checkRound(round);
+
+        return await this.get(`${year}/${round}/drivers.json`, {
+            cacheOptions: { ttl: 60 }
         })
     }
 }
