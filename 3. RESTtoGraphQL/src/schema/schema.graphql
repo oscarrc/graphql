@@ -89,17 +89,27 @@ type Driver {
 }
 
 type Standing {
+  "Posición en la clasificación"
   position: String!,
+  "Posición en texto"
   positionText: String!,
+  "Puntos obtenidos"
   points: Int!,
+  "Carreras ganadas"
   wins: Int!,
+  "Piloto"
   driver: Driver!,
+  "Escudería"
   carConstructor: Constructor!
 }
 
 type Constructor {
-  id: ID!,
-  url: String,
-  urlMobile: String,
+  "Identificador de la escudería"
+  id: ID!
+  "Información de Wikipedia"
+  url: String!
+  "Información de Wikipedia para móviles"
+  urlMobile: String!
+  "Pais de nacionalidad de la escudería"
   nationality: String
 }
