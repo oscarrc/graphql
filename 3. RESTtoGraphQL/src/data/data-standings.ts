@@ -7,7 +7,7 @@ export class StandingsData extends F1 {
         super();
     }
 
-    async getStandings(year: string){
+    async getDriverStandings(year: string){
         year = checkYear(year);
 
         return await this.get(`${year}/driverStandings.json`, {
