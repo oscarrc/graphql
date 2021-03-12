@@ -8,9 +8,7 @@ export class SeasonsData extends F1 {
 
     async getSeasons(){
         return await this.get("seasons.json?limit=80", {
-            cacheOptions: {
-                ttl: 60
-            }
+            cacheOptions: { ttl: 60 }
         })
     }
 }

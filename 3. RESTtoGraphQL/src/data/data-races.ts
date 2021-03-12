@@ -10,9 +10,7 @@ export class RacesData extends F1 {
         year = checkYear(year);
 
         return await this.get(`${year}.json`, {
-            cacheOptions: {
-                ttl: 60
-            }
+            cacheOptions: { ttl: 60 }
         })
     }
 
@@ -21,9 +19,7 @@ export class RacesData extends F1 {
         round = checkRound(round);
 
         return await this.get(`${year}/${round}.json`, {
-            cacheOptions: {
-                ttl: 60
-            }
+            cacheOptions: { ttl: 60 }
         })
     }
 }
