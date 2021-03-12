@@ -13,6 +13,8 @@ type Query {
   driversRaceList(year: String!, round: Int!): [Driver!]!
   "Información del piloto seleccionado por Id"
   driverSelect(id: ID!): Driver
+  "Clasificación de los pilotos por año"
+  standingsByYear(year: String!): [Standing!]!
 }
 
 type Season {
@@ -84,4 +86,20 @@ type Driver {
   permanentNumber: String
   "Código de 3 carácteres del piloto"
   code: String
+}
+
+type Standing {
+  position: String!,
+  positionText: String!,
+  points: Int!,
+  wins: Int!,
+  driver: Driver!,
+  carConstructor: Constructor!
+}
+
+type Constructor {
+  id: ID!,
+  url: String,
+  urlMobile: String,
+  nationality: String
 }
