@@ -1,52 +1,87 @@
 type Query {
-    seasonsList: [Season!]!
-    racesByYear(year: String!): [Race!]!
-    raceSelect(year: String!, round: Int!): Race    
-    driversList(limit: Int, page: Int): [Driver!]!
-    driversSeasonList(year: String!): [Driver!]!
-    driversRaceList(year: String!, round: Int!): [Driver!]!
-    driverSelect(id: ID!): Driver
+  "Lista temporadas Formula 1 de 1950 a la actualidad"
+  seasonsList: [Season!]!
+  "Información de carreras por año de 1950 a la actualidad"
+  racesByYear(year: String!): [Race!]!
+  "Información de una carrera por año de 1950 a la actualidad"
+  raceSelect(year: String!, round: Int!): Race    
+  "Lista paginada de todos los pilotos"
+  driversList(limit: Int, page: Int): [Driver!]!
+  "Lista de pilotos por año de 1950 a la actualidad"
+  driversSeasonList(year: String!): [Driver!]!
+  "Lista de pilotos por carrera y año de 1950 a la actualidad"
+  driversRaceList(year: String!, round: Int!): [Driver!]!
+  "Información del piloto seleccionado por Id"
+  driverSelect(id: ID!): Driver
 }
 
 type Season {
-    year: String!
-    url: String!
-    urlMobile: String!
+  "Año de la temporada"
+  year: String!
+  "Información de Wikipedia"
+  url: String!
+  "Información de Wikipedia para móviles"
+  urlMobile: String!
 }
 
 type Race {
+  "Año de la temporada"
   season: String!
+  "Número de carrera dentro de la temporada"
   round: String!
+  "Información de Wikipedia"
   url: String!
+  "Información de Wikipedia para móviles"
   urlMobile: String!
+  "Nombre del gran premio"
   name: String!
+  "Circuito en que se corre"
   circuit: Circuit!
+  "Fecha de la carrera"
   date: String!
+  "Hora de comienzo de la carrera"
   time: String
 }
 
 type Circuit {
+  "Identificador del circuito"
   id: String!
+  "Información de Wikipedia"
   url: String!
+  "Información de Wikipedia para móviles"
   urlMobile: String!
+  "Nombre del circuito"
   name: String!
+  "Localización geográfica del circuito"
   location: Location!
 }
 
 type Location {
+  "Latitud de la localización"
   lat: String!
+  "Longitud de la localización"
   lon: String!
+  "Localidad"
   locality: String!
+  "Pais"
   country: String!
 }
 
 type Driver {
+  "Identificador del piloto"
   id: String!
+  "Información de Wikipedia"
   url: String!
+  "Información de Wikipedia para móviles"
   urlMobile: String!
+  "Nombre del piloto"
   name: String!
+  "Fecha de nacimiento del piloto"
   dateOfBirth: String!
+  "Nacionalidad del piloto"
   nationality: String!
+  "Número permante de identificación"
   permanentNumber: String
+  "Código de 3 carácteres del piloto"
   code: String
 }
