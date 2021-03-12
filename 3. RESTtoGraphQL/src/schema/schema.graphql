@@ -110,6 +110,8 @@ type Standing {
 type Constructor {
   "Identificador de la escudería"
   id: ID!
+  "Nombre de la escudería"
+  name: String!
   "Información de Wikipedia"
   url: String!
   "Información de Wikipedia para móviles"
