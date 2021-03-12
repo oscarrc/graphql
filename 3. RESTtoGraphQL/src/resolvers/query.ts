@@ -1,3 +1,4 @@
+import { dataSources } from './../data/index';
 import { IResolvers } from 'graphql-tools';
 
 const query: IResolvers = {
@@ -28,6 +29,9 @@ const query: IResolvers = {
         },
         async circuitsList(_: void, { limit, page }, { dataSources }){
             return await dataSources.circuits.getCircuits( limit, page ).then( (data:any) =>  data.MRData.CircuitTable.Circuits );
+        },
+        async selectCircuit(_: void, { id }, { dataSources }){
+            return await dataSources.circuits.selectCircuit( id ).then( (data:any) => data.MRData.CircuitTable.Circuits[0])
         }
     }
 };

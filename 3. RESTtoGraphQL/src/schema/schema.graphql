@@ -17,6 +17,8 @@ type Query {
   standingsByYear(year: String!): [Standing!]!,
   "Lista paginada de todos los circuitos"
   circuitsList(limit: Int, page: Int): [Circuit!]!
+  "Información de un circuito por id"
+  selectCircuit(id: ID!): Circuit
 }
 
 type Season {
