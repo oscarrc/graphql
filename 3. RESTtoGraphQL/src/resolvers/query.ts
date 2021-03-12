@@ -25,6 +25,9 @@ const query: IResolvers = {
         },
         async standingsByYear(_: void, { year }, { dataSources }){
             return await dataSources.standings.getStandings( year ).then( (data:any) => data.MRData.StandingsTable.StandingsLists[0].DriverStandings );
+        },
+        async circuitsList(_: void, { limit, page }, { dataSources }){
+            return await dataSources.circuits.getCircuits( limit, page ).then( (data:any) =>  data.MRData.CircuitTable.Circuits );
         }
     }
 };

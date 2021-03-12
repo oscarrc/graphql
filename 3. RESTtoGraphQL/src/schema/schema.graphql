@@ -14,7 +14,9 @@ type Query {
   "Información del piloto seleccionado por Id"
   driverSelect(id: ID!): Driver
   "Clasificación de los pilotos por año"
-  standingsByYear(year: String!): [Standing!]!
+  standingsByYear(year: String!): [Standing!]!,
+  "Lista paginada de todos los circuitos"
+  circuitsList(limit: Int, page: Int): [Circuit!]!
 }
 
 type Season {
