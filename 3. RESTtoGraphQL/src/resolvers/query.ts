@@ -24,7 +24,7 @@ const query: IResolvers = {
             return await dataSources.drivers.getDriver( id ).then( (data:any) =>  data.MRData.DriverTable.Drivers[0] );
         },
         async standingsByYear(_: void, { year }, { dataSources }){
-            return await dataSources.standings.getStandings( year ).then( (data:any) => data.MRData.StandingsTable.StandingsLists.DriverStandings);
+            return await dataSources.standings.getStandings( year ).then( (data:any) => data.MRData.StandingsTable.StandingsLists[0].DriverStandings );
         }
     }
 };
