@@ -16,10 +16,13 @@ npm install --save apollo-datasource-rest apollo-server
 
 ### Publicar api en Vercel
 
-```
-npm install -g vercel
-```
+* Instalar vercel cli
+   ```
+   npm install -g vercel
+   ```
 
-```
-vercel
-```
+* Crear archivo de configuración vercel.json
+* Subir proyecto a Vercel
+  ```
+  vercel
+  ```
