@@ -13,3 +13,13 @@ npm install --save apollo-datasource-rest apollo-server
 ### API REST del proyecto
 
 [ERGAST F1](https://ergast.com/mrd/)
+
+### Publicar api en Vercel
+
+```
+npm install -g vercel
+```
+
+```
+vercel
+```
